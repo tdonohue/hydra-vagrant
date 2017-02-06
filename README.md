@@ -12,6 +12,11 @@ A Vagrant environment to quickly setup current [CurationConcerns](https://github
 1. `git clone https://github.com/projecthydra-labs/hydra-vagrant.git`
 2. `cd hydra-vagrant`
 3. `vagrant up`
+  * By default, all applications will be installed. However, you may choose to install specific applications using the `APPS` environment variable. Some examples:
+    * `APPS="CC Sufia" vagrant up` => Install just CurationConcerns and Sufia.
+    * `APPS="Sufia Hyrax" vargrant up` => Install just Sufia and Hyrax
+    * `APPS="Hyrax" vagrant up` => Just install Hyrax
+  * On Windows, using [GitHub Desktop](https://desktop.github.com/) (or git bash), these environment variables need to be specified with `env APPS='[value]' vagrant up`
 
 You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localhost`
 
@@ -20,7 +25,8 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
 * The Vagrant contains three demo apps:
   * CurationConcerns: `/home/vagrant/curation-concerns-demo`
   * Sufia: `/home/vagrant/sufia-demo`
-  * Lerna / Hydra-in-a-box: `/home/vagrant/lerna-demo`
+  * Hyrax: `/home/vagrant/hyrax`
+  * Hyku:  `/home/vagrant/hyku`
 * Once connected to the Vagrant VM, change into the app directory and run the demo.
   e.g., for CurationConcerns: `cd curation-concerns-demo; rake demo`
 * Access the app at [http://localhost:3000](http://localhost:3000).
