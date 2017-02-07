@@ -53,9 +53,8 @@ if [[ $ARGS == *"Hyrax"* ]] || [[ $ARGS == "ALL" ]]; then
   cd
   git clone https://github.com/projecthydra-labs/hyrax.git hyrax
   cd hyrax
-  # Needed to make Admin Users: https://github.com/projecthydra/sufia/wiki/Making-Admin-Users-in-Sufia
   bundle install --quiet
-  # Generate internal test app
+  # Generate internal test app (.internal_test_app subdirectory)
   rake engine_cart:generate
   # Needed to make Admin Users: https://github.com/projecthydra/sufia/wiki/Making-Admin-Users-in-Sufia
   cd .internal_test_app
