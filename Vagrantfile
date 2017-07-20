@@ -14,9 +14,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network :forwarded_port, guest: 8983, host: 8983 # Solr
   config.vm.network :forwarded_port, guest: 8984, host: 8984 # Fedora
   config.vm.network :forwarded_port, guest: 8888, host: 8888 # Jasmine Tests
+  config.vm.network :forwarded_port, guest: 52698, host: 52698 # remote-atom: https://atom.io/packages/remote-atom
 
   config.vm.provider "virtualbox" do |v|
-    v.memory = 2048
+    v.memory = 3072
   end
 
   # Check our system locale -- make sure it is set to UTF-8
